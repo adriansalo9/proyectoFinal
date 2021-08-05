@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Smine</title>
 
     <!-- Fonts -->
@@ -19,18 +20,21 @@
     <script src="../resources/js/snake.js"></script>
     <script src="../resources/js/minesweeper.js"></script>
     <script>
-
         function guardarPuntuacion(score) {
             $.ajax({
-                type: 'post',
+                type: 'POST',
                 data: {
                     'score': score,
+                    /*"_token": "{{ csrf_token() }}"*/
+                    "_token": $("meta[name='csrf-token']").attr("content")
                 },
-                url: '../resources/views/ajax-puntuacion.blade.php',
+                /*dataType: 'script',*/
+                url: '/laravelApp/proyectoFinal/public/snake',
                 beforeSend: function() {
                     $('#resul').html('Procesando...');
                 },
-                success: function() {
+                success: function(data) {
+                    console.log(data);
                     $('#resul').show();
                     $('#resul').html('Tu puntuación ha sido de: ' + score);
                 }

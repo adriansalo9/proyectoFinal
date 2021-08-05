@@ -4,11 +4,11 @@
         <div class="container">
             <div id="buscaminas">
                 <h2>
-                    <a href="{{ url('/login') }}">Jugar al Buscaminas</a> <img class="minita" src="../resources/img/minita.png"
+                    <a href="{{ url('/mine') }}">Jugar al Buscaminas</a> <img class="minita" src="../resources/img/minita.png"
                         alt="imagen de una mina del buscaminas">
                 </h2>
-                <p><a href="{{ url('/login') }}">Buscaminas</a> (nombre original en inglés: Minesweeper) es un videojuego para un jugador
-                    inventado por
+                <p><a href="{{ url('/mine') }}">Buscaminas</a> (nombre original en inglés: Minesweeper) es un videojuego para un jugador
+                    inventado por 
                     Robert Donner en 1989. El objetivo del juego es despejar un campo de minas sin detonar ninguna.
 
                     El juego ha sido programado para muchos sistemas operativos, pero debe su popularidad a las
@@ -47,8 +47,8 @@
                     cambiar las minas por flores.</p>
             </>
             <div id="snake-post">
-                <h2><a href="{{ url('/login') }}">Jugar al Snake</a> <img class="serp" src="../resources/img/serpp.png" alt="serpiente del juego snake"></h2>
-                <p>El <a href="{{ url('/login') }}">Snake</a> (a veces también llamado la serpiente) es un videojuego lanzado a mediados
+                <h2><a href="{{ url('/snake') }}">Jugar al Snake</a> <img class="serp" src="../resources/img/serpp.png" alt="serpiente del juego snake"></h2>
+                <p>El <a href="{{ url('/snake') }}">Snake</a> (a veces también llamado la serpiente) es un videojuego lanzado a mediados
                     de la década de
                     1970 que ha mantenido su popularidad desde entonces, convirtiéndose en un clásico. En 1998, el Snake
                     obtuvo una audiencia masiva tras convertirse en un juego estándar pre-grabado en los teléfonos

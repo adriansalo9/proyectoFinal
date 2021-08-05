@@ -25,7 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('snake',SnakeController::class);
-Route::resource('score',ScoreController::class);
-Route::resource('mine',MineController::class);
-Route::resource('user',UserController::class);
+Route::resource('snake',SnakeController::class)->middleware('auth');
+Route::resource('score',ScoreController::class)->middleware('auth');
+Route::resource('mine',MineController::class)->middleware('auth');
+Route::resource('user',UserController::class)->middleware('auth');
