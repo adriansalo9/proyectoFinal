@@ -19,6 +19,8 @@
     <script src="../resources/js/javaS1.js"></script>
     <script src="../resources/js/snake.js"></script>
     <script src="../resources/js/minesweeper.js"></script>
+    <!--RECAPTCHA-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function guardarPuntuacion(score) {
             $.ajax({
