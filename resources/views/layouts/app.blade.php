@@ -92,7 +92,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                         @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Inicio<span class="sr-only">(current)</span></a>
@@ -107,6 +106,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/score') }}">Puntuaciones</a>
                         </li>
+                        @if(Auth::user()->role_id == 2)  
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/user') }}">Administrar Usuarios</a>
+                        </li>
+                        @endif
                         @endauth
                     </ul>
 

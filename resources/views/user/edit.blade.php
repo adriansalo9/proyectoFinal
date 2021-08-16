@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" required maxlength="50" value="{{Auth::user()->email}}">
+                    <input type="email" class="form-control" name="email" required maxlength="50" value="{{Auth::user()->email}}">
                 </div>
                 <input class="btn btn-primary block" type="submit" value="Guardar usuario">
             </form>

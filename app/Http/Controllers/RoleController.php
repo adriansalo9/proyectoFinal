@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $datosUser = User::all();
-        if(Auth::user()->role_id == 2){
-            return view('user.admin',['datosUser' => $datosUser]);
-        }
-        else{
-            return view('user.index',['datosUser' => $datosUser]);
-        }
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Role $role)
     {
         //
     }
@@ -59,41 +52,34 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        $usuario = User::find($id);
-        return view('user.edit',['usuario'=>$usuario]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        $usuario = User::find($id);
-        $usuario->name = $request->input('name');
-        $usuario->email = $request->input('email');
-        $usuario->save();
-        return redirect('user')->with('status','Usuario modificado');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        $usuario = User::find($id);
-        $usuario->delete();
-        return redirect('register')->with('status','Usuario eliminado');
+        //
     }
 }
