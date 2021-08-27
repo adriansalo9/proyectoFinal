@@ -35,7 +35,13 @@ class MineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mine = new Mine();
+        $mine->user_id= \Auth::id();
+        $mine->minutos = $request->minutos;
+        $mine->segundos = $request->segundos;
+        $mine->centesimas = $request->minutos;
+        $mine->save();
+        return $mine;
     }
 
     /**

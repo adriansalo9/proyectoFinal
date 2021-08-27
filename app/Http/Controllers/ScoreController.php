@@ -17,9 +17,10 @@ class ScoreController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         $scoresSnake = Snake::all()->sortByDesc('score')->take(5);
         $scoresMine = Mine::all()->sortBy('minutos')->sortBy('segundos')->sortBy('centesimas')->take(5);
-        return view('score.index', ['scoresSnake' => $scoresSnake, 'scoresMine' => $scoresMine]);
+        return view('score.index', ['scoresSnake' => $scoresSnake, 'scoresMine' => $scoresMine,'users'=>$users]);
     }
 
     /**

@@ -13,8 +13,8 @@ class Snake extends Model
         'user_id',
         'score'
     ];
-    /*public function users()
+    public function users()
     {
-        return $this->hasMany(User::class);
-    }*/
+        return $this->belongsTo(User::class);
+    }
 }

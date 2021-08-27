@@ -16,6 +16,7 @@ class CreateSnakesTable extends Migration
         Schema::create('snakes', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users');
             $table->integer('score');
+            $table->timestamps();
         });
     }
 

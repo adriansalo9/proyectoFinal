@@ -15,12 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $datosUser = User::all();
+        $users = User::all();
         if(Auth::user()->role_id == 2){
-            return view('user.admin',['datosUser' => $datosUser]);
+            return view('user.admin',['users' => $users]);
         }
         else{
-            return view('user.index',['datosUser' => $datosUser]);
+            return view('user.index',['users' => $users]);
         }
     }
 
@@ -53,7 +53,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('layouts.app',['user'=>$user]);
     }
 
     /**

@@ -36,13 +36,14 @@ class SnakeController extends Controller
     public function store(Request $request)
     {
         //$snake->user_id = \Auth::id();
-        /*$user = \Auth::id();
-        return " El id es: $user, y su puntuación es: $request->score";*/
+        $user = \Auth::id();
+        //return " El id es: $user, y su puntuación es: $request->score";
         $snake = new Snake();
         $snake->user_id = \Auth::id();
         $snake->score = $request->score;
         //return $snake;
         $snake->save();
+        return $snake;
     }
 
     /**

@@ -49,9 +49,10 @@
                 data: {
                     'minutos': mins,
                     'segundos': sgs,
-                    'centesimas': cnts
+                    'centesimas': cnts,
+                    "_token": $("meta[name='csrf-token']").attr("content")
                 },
-                url: '../resources/views/ajax-time.blade.php',
+                url: '/laravelApp/proyectoFinal/public/mine',
                 beforeSend: function() {
                     $('#resultado').html('Procesando...');
                 },
@@ -93,6 +94,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
+                        @if(Auth::user()->role_id == 1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Inicio<span class="sr-only">(current)</span></a>
                         </li>
@@ -104,8 +106,9 @@
                             <a class="nav-link" href="{{ url('/mine') }}">Buscaminas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/score') }}">Puntuaciones</a>
+                            <a class="nav-link" href="{{ url('/score')}}">Puntuaciones</a>
                         </li>
+                        @endif
                         @if(Auth::user()->role_id == 2)  
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/user') }}">Administrar Usuarios</a>

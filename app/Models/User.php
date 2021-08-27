@@ -42,7 +42,11 @@ class User extends Authenticatable
     ];
     public function snake()
     {
-        return $this->belongsTo(Snake::class);
+        return $this->hasMany(Snake::class)->orderBy('score','DESC');
+    }
+    public function mine()
+    {
+        return $this->hasMany(Mine::class);
     }
     public function role()
         {

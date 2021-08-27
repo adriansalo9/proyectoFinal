@@ -14,10 +14,11 @@ class CreateMinesTable extends Migration
     public function up()
     {
         Schema::create('mines', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->integer('minutos');
             $table->integer('segundos');
             $table->integer('centesimas');
+            $table->timestamps();
         });
     }
 
