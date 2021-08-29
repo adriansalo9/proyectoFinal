@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Support\Facades\Route;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -42,11 +42,19 @@ class User extends Authenticatable
     ];
     public function snake()
     {
+        $nombreRuta = Route::currentRouteName();
+        if ($nombreRuta == 'score.index'){
+            return $this->hasMany(Snake::class)->orderBy('score','DESC')->take(1);
+        }
         return $this->hasMany(Snake::class)->orderBy('score','DESC');
     }
     public function mine()
     {
-        return $this->hasMany(Mine::class);
+        $nombreRuta = Route::currentRouteName();
+        if ($nombreRuta == 'score.index'){
+            return $this->hasMany(Mine::class)->orderBy('minutos')->orderBy('segundos')->orderBy('centesimas')->take(1);
+        }
+        return $this->hasMany(Mine::class)->orderBy('minutos')->orderBy('segundos')->orderBy('centesimas');
     }
     public function role()
         {

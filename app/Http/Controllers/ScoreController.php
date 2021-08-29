@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mine;
 use App\Models\Score;
-use App\Models\Snake;
 use App\Models\User;
 use Illuminate\Http\Request;
-
 class ScoreController extends Controller
 {
     /**
@@ -18,9 +15,7 @@ class ScoreController extends Controller
     public function index()
     {
         $users = User::all();
-        $scoresSnake = Snake::all()->sortByDesc('score')->take(5);
-        $scoresMine = Mine::all()->sortBy('minutos')->sortBy('segundos')->sortBy('centesimas')->take(5);
-        return view('score.index', ['scoresSnake' => $scoresSnake, 'scoresMine' => $scoresMine,'users'=>$users]);
+        return view('score.index', ['users'=>$users]);
     }
 
     /**

@@ -5,7 +5,7 @@
         <div id="tablero">
             </div>
             <div id="estado">
-                <div>Nº de minas restante: <span id="numMinasRestantes"></span>
+                <div><bold>Nº de minas restante: <span id="numMinasRestantes"></span></bold>
             </div>
         </div>
         <div id="cronometro">

@@ -250,7 +250,7 @@ main#contenido{
 :root {
 	--num-columnas: 10;
 	--num-filas: 10;
-	--size: 32px;
+	--size: 40px;
 }
 
 #tablero {
@@ -259,16 +259,16 @@ main#contenido{
 	display: grid;
 	grid-template-columns: repeat(var(--num-columnas), var(--size));
 	grid-template-rows: repeat(var(--num-filas), var(--size));
-	background-color: #BBBBBB;
+	background-color: rgba(46, 184, 64, 0.623);
 	width: calc(var(--num-filas) * var(--size));
 }
 
 #tablero div {
-	background-color: #BBBBBB;
-	border-left: 2px solid #D3D3D3;
-	border-top: 2px solid #D3D3D3;
-	border-right: 2px solid #A9A9A9;
-	border-bottom: 2px solid #A9A9A9;
+	background-color: rgba(46, 184, 64, 0.623);
+	border-left: 2px solid rgba(35, 141, 49, 0.623);
+	border-top: 2px solid rgba(35, 141, 49, 0.623);
+	border-right: 2px solid rgba(48, 185, 66, 0.623);
+	border-bottom: 2px solid rgba(48, 185, 66, 0.623);
 	text-align: center;
 	line-height: var(--size);
 }
@@ -276,10 +276,10 @@ main#contenido{
 #tablero div.destapado {
 	font-family: "Helvetica", "Courier New", Courier, monospace;
 	font-weight: bold;
-	border-left: 1px solid #A9A9A9;
-	border-top: 1px solid #A9A9A9;
-	border-right: 1px solid #D3D3D3;
-	border-bottom: 1px solid #D3D3D3;
+	border-left: 1px solid rgba(48, 185, 66, 0.623);
+	border-top: 1px solid rgba(48, 185, 66, 0.623);
+	border-right: 1px solid rgba(35, 141, 49, 0.623);
+	border-bottom: 1px solid rgba(35, 141, 49, 0.623);
 	text-shadow: 1px 1px 2px #999999;
 }
 
@@ -295,11 +295,10 @@ main#contenido{
 #estado {
 	padding: 2px 10px 2px 10px;
 	display: block;
-	background-color: #BBBBBB;
-	border-left: 2px solid #D3D3D3;
-	/* border-top: 2px solid #D3D3D3; */
-	border-right: 2px solid #A9A9A9;
-	border-bottom: 2px solid #A9A9A9;
+	background-color: rgba(46, 184, 64, 0.623);
+	border-left: 2px solid rgba(48, 185, 66, 0.623);
+	border-right: 2px solid rgba(35, 141, 49, 0.623);
+	border-bottom: 2px solid rgba(35, 141, 49, 0.623);
 	width: calc(var(--num-columnas)*var(--size));
 }
 
@@ -307,7 +306,7 @@ main#contenido{
 	text-align: right;
 	font-family: sans-serif;
 	font-size: 14px;
-	color: #333333;
+	color: black;
 	border-left: 1px solid #A9A9A9;
 	border-top: 1px solid #A9A9A9;
 	border-right: 1px solid #D3D3D3;
