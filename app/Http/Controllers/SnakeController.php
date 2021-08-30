@@ -88,6 +88,6 @@ class SnakeController extends Controller
      */
     public function destroy(Snake $snake)
     {
-        //
+
     }
 }

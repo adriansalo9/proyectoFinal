@@ -114,7 +114,7 @@ function contarMinas() {
 
 function marcar(miEvento) {
     if (miEvento.type === "contextmenu" || miEvento.type === "touchstart") {
-        console.log(miEvento);
+        
 
         //obtenemos el elemento que ha disparado el evento
         let casilla = miEvento.currentTarget;
@@ -185,9 +185,7 @@ function destaparCasilla(fila, columna) {
         columna > -1 &&
         columna < buscaminas.numColumnas
     ) {
-        console.log(
-            "destapamos la casilla con fila " + fila + " y columna " + columna
-        );
+
 
         //obtenermos la casilla con la fila y columna
         let casilla = document.querySelector("#f" + fila + "_c" + columna);

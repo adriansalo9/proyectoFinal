@@ -46,7 +46,7 @@ class User extends Authenticatable
         if ($nombreRuta == 'score.index'){
             return $this->hasMany(Snake::class)->orderBy('score','DESC')->take(1);
         }
-        return $this->hasMany(Snake::class)->orderBy('score','DESC');
+        return $this->hasMany(Snake::class)->orderBy('score','DESC')->take(5);
     }
     public function mine()
     {
@@ -54,7 +54,7 @@ class User extends Authenticatable
         if ($nombreRuta == 'score.index'){
             return $this->hasMany(Mine::class)->orderBy('minutos')->orderBy('segundos')->orderBy('centesimas')->take(1);
         }
-        return $this->hasMany(Mine::class)->orderBy('minutos')->orderBy('segundos')->orderBy('centesimas');
+        return $this->hasMany(Mine::class)->orderBy('minutos')->orderBy('segundos')->orderBy('centesimas')->take(5);
     }
     public function role()
         {

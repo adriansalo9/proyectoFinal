@@ -3,13 +3,11 @@
 <table class="table table-striped text-center">
     <h1 class="h2 text-center">Mejores puntuaciones de Snake</h1>
     @foreach ($users as $user)
-    @for ($i=0; $i < 1 ; $i++)
         @foreach ($user->snake as $puntos)
         <tr>
             <td>{{$user->name}} → <b>{{$puntos->score}}</b></td>
         </tr>
         @endforeach
-        @endfor
     @endforeach 
 </table>
 <table class="table table-striped text-center">

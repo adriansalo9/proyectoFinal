@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SnakeController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\AdministrarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,4 @@ Route::resource('snake',SnakeController::class)->middleware('auth');
 Route::resource('score',ScoreController::class)->middleware('auth');
 Route::resource('mine',MineController::class)->middleware('auth');
 Route::resource('user',UserController::class)->middleware('auth');
+Route::resource('administrar',AdministrarController::class)->middleware('auth');

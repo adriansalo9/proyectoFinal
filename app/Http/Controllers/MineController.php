@@ -39,7 +39,7 @@ class MineController extends Controller
         $mine->user_id= \Auth::id();
         $mine->minutos = $request->minutos;
         $mine->segundos = $request->segundos;
-        $mine->centesimas = $request->minutos;
+        $mine->centesimas = $request->centesimas;
         $mine->save();
         return $mine;
     }

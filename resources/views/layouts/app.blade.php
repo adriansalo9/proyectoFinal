@@ -27,10 +27,8 @@
                 type: 'POST',
                 data: {
                     'score': score,
-                    /*"_token": "{{ csrf_token() }}"*/
                     "_token": $("meta[name='csrf-token']").attr("content")
                 },
-                /*dataType: 'script',*/
                 url: '/laravelApp/proyectoFinal/public/snake',
                 beforeSend: function() {
                     $('#resul').html('Procesando...');
@@ -45,7 +43,7 @@
 
         function guardarScore(mins, sgs, cnts) {
             $.ajax({
-                type: 'post',
+                type: 'POST',
                 data: {
                     'minutos': mins,
                     'segundos': sgs,
@@ -106,7 +104,7 @@
                             <a class="nav-link" href="{{ url('/mine') }}">Buscaminas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/score')}}">Puntuaciones</a>
+                            <a class="nav-link" href="{{ url('/score')}}">Mejores Puntuaciones</a>
                         </li>
                         @endif
                         @if(Auth::user()->role_id == 2)  
