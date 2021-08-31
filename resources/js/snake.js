@@ -1,3 +1,8 @@
+/*este código esta inspirado en las siguientes páginas cogiendo métodos y funcionalidades 
+https://www.freecodecamp.org/espanol/news/juego-de-la-serpiente-como-crearlo-con-javascript/
+https://programmerclick.com/article/66732053545/
+https://codepen.io/parzibyte/pen/VMNWzj
+*/
 //constantes para el funcionamiento del juego
 //corriendo el juego
 const STATE_RUNNING = 1;
@@ -151,6 +156,7 @@ function draw() {
     const { x, y } = state.prey;
     drawPixel('yellow', x, y);
 }
+//yo he añadido una puntuación que se pasa mediante AJAX a la base de datos.
 function stopGame() {
     //alert(`Tu puntuación ha sido de: ${score}`);
     var mensaje = confirm(`Tu puntuación ha sido de: ${score}, deseas guardarlo?`);

@@ -1,3 +1,4 @@
+//el código original es de la página https://www.adictosaltrabajo.com/2020/06/03/programar-un-buscaminas-en-javascript-con-tu-hijo/ 
 const buscaminas = {
     numMinasTotales: 12,
     numMinasEncontradas: 0,
@@ -26,6 +27,7 @@ function pintarTablero() {
         tablero.firstChild.removeEventListener("touchend", marcar);
         tablero.removeChild(tablero.firstChild);
     }
+    //los eventos touch son creados por mí para poder jugar desde el móvil 
 
     //creamos las casillas que necesitemos
     for (let f = 0; f < buscaminas.numFilas; f++) {
@@ -162,6 +164,7 @@ function marcar(miEvento) {
         }
     }
 }
+//también he añadido un temporizador para poder tener una cuenta del tiempo que cuesta resolverlo
 var temporizador = true;
 function destapar(miEvento) {
     if (temporizador) {

@@ -10,7 +10,7 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="name" required maxlength="15" value="{{Auth::user()->name}}">
+                    <input type="text" class="form-control" name="name" required maxlength="30" value="{{Auth::user()->name}}">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>

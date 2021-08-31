@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Score;
+use App\Models\Snake;
 use App\Models\User;
 use Illuminate\Http\Request;
 class ScoreController extends Controller
@@ -14,8 +15,9 @@ class ScoreController extends Controller
      */
     public function index()
     {
+        $puntuacionesS = Snake::all();
         $users = User::all();
-        return view('score.index', ['users'=>$users]);
+        return view('score.index', ['users'=>$users,'puntuacionesS'=>$puntuacionesS]);
     }
 
     /**

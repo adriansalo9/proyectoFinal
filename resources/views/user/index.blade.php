@@ -31,15 +31,15 @@
     </thead>
 </table>
 <table class="table text-center">
-    <thead class="thead-dark">
-        <tr>
+    <thead>
+        <tr class="table-success">
             <th scope="col">Puntuaciones Snake</th>
         </tr>
         @foreach ($users as $user)
         @if($user->id == Auth::user()->id )
         @foreach ($user->snake as $puntosSnake)
         <tr>
-            <td><b>{{$puntosSnake->score}}</b></td>
+            <td class="table-light"><b>{{$puntosSnake->score}}</b></td>
         </tr>
         @endforeach
         @endif
@@ -47,15 +47,15 @@
     </thead>
 </table>
 <table class="table text-center">
-    <thead class="thead-dark">
-        <tr>
+    <thead>
+        <tr class="table-success">
             <th scope="col">Puntuaciones Buscaminas</th>
         </tr>
         @foreach ($users as $user)
         @if($user->id == Auth::user()->id )
         @foreach ($user->mine as $puntos)
         <tr>
-            <td><b>{{$puntos->minutos}}:{{$puntos->segundos}}:{{$puntos->centesimas}}</b></td>
+            <td class="table-light"><b>{{$puntos->minutos}}:{{$puntos->segundos}}:{{$puntos->centesimas}}</b></td>
         </tr>
         @endforeach
         @endif
@@ -63,28 +63,3 @@
     </thead>
 </table>
 @endsection
-
-<thead class="thead-dark">
-    <tr>
-        <th scope="col">Puntuaciones Snake</th>
-        <th scope="col">Puntuaciones Buscaminas</th>
-    </tr>
-    @foreach ($users as $user)
-    @if($user->id == Auth::user()->id )
-    @foreach ($user->snake as $puntosSnake)
-    <tr>
-        <td><b>{{$puntosSnake->score}}</b></td>
-    </tr>
-    @endforeach
-    @endif
-    @endforeach
-    @foreach ($users as $user)
-    @if($user->id == Auth::user()->id )
-    @foreach ($user->mine as $puntos)
-    <tr>
-        <td>{{$user->name}} → <b>{{$puntos->minutos}}:{{$puntos->segundos}}:{{$puntos->centesimas}}</b></td>
-    </tr>
-    @endforeach
-    @endif
-    @endforeach
-</thead>
