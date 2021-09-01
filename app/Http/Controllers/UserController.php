@@ -66,7 +66,12 @@ class UserController extends Controller
     public function edit($id)
     {
         $usuario = User::find($id);
-        return view('user.edit',['usuario'=>$usuario]);
+        if(Auth::user()->role_id == 2){
+            return view('user.adminedit',['usuario' => $usuario]);
+        }
+        else {
+            return view('user.edit',['usuario'=>$usuario]);
+        }
     }
 
     /**
@@ -94,6 +99,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         $usuario = User::find($id);
+        if(Auth::user()->role_id == 2){
+           $usuario->snake()->delete();
+           $usuario->mine()->delete();
+           $usuario->delete();
+           return redirect('user')->with('status','Usuario eliminado');
+        }
         $usuario->delete();
         return redirect('register')->with('status','Usuario eliminado');
     }
